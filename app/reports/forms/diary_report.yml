@@ -1,0 +1,54 @@
+
+table: ar_memory
+control: diary_report
+
+# form for entering selection fields
+form:
+  actions: export
+  title:
+    new: Diary report for an interval
+
+  fields:
+    10:
+      type: date_picker
+      name: date_from
+      caption: portal.starting-date
+      default:
+        eval: I18n.l(Time.now.beginning_of_month.to_date)
+      size: 10
+      html:
+        required: true
+
+    20:
+      type: date_picker
+      name: date_to
+      caption: portal.ending-date
+      default:
+        eval: I18n.l(Time.now.to_date)
+      size: 10
+      html:
+        required: true
+
+# form for displaying result
+report:
+  table: ar_temp
+  title: agile.result
+  control: diary_report
+
+  index:
+    data_set:
+      filter: data_filter
+      per_page: 0
+
+      columns:
+        10:
+          name: time_begin
+          caption: helpers.label.diary.time_begin
+          width: 10%
+        20:
+          name: duration
+          caption: helpers.label.diary.duration
+          width: 8%
+        30:
+          name: title
+          caption: helpers.label.diary.title

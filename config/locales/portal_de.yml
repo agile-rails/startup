@@ -1,0 +1,17 @@
+de:
+  portal:
+    new_entry: Neuer Eintrag
+    report: Bericht
+    starting-date: Startdatum
+    ending-date: Enddatum
+
+  menu:
+    home: Startseite
+    diary: Tagebuch
+    todo: Aufgaben
+    orders: Bestellungen
+
+  todo:
+    close: Aufgabe schließen
+    confirm: Aufgabe schließen bestätigen
+    filter_hide_closed: Geschlossene Aufgaben ausblenden

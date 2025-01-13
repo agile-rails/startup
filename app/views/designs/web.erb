@@ -1,0 +1,26 @@
+<%= agile_page_top %>
+
+<div id="web">
+  <div id="top">
+    <div id="logo">
+      <%= image_tag 'agile-rails.webp' %>
+      <div id="logo-text"><div>AGILE</div> <div>RAILS</div></div>
+    </div>
+
+    <div id=menu>
+      <%= agile_render :ar_menu, name: 'web-menu' %>
+    </div>
+  </div>
+  
+  <div id="page">
+
+    <% if @options['view'] %>
+      <%= render partial: @options['view'] %>
+    <% else %>
+      <%= agile_render(:ar_page) %>
+    <% end %>
+
+  </div>
+</div>
+
+<%= agile_page_bottom %>

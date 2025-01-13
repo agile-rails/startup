@@ -1,0 +1,32 @@
+# Form adds some company data to standard ar_user form
+extend: agile_rails.ar_user
+
+index:
+  data_set:
+    columns:
+      30:
+        name: sector_id
+        eval: agile_name_for_id sector, name
+
+form:
+  tabs:
+    2company:
+      10:
+        name: sector_id
+        type: select
+        choices: eval agile_choices_for('sector','name','id')
+        html:
+          include_blank: true
+      20:
+        name: cost_center_id
+        type: select
+        choices: eval CostCenter.choices_for_cost_center_in_sector
+        depend: sector_id
+      30:
+        name: job
+        type: text_field
+        size: 30
+      40:
+        name: sign
+        type: file_select
+        size: 50

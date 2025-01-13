@@ -1,0 +1,32 @@
+<%= agile_page_top %>
+<% can_view, msg = agile_user_can_view(self, @page) %>
+
+<div id="site-frame">
+  <div id="site-top">
+    <div style="float: left;">
+      <%= agile_render(:ar_menu, name: agile_get_site.menu_name) %>
+    </div>
+    <div style="float: right;">
+      <%= agile_render(:portal, method: 'login') %>
+    </div>
+    <div style="clear: both;"></div>
+  </div>
+  
+  <div id="page">
+    <% if can_view %>
+
+      <% if @options['render'] %>
+        <%= agile_render_part @options['render'] %>
+      <% elsif @options['menu'] %>
+        <%= render partial: @options['menu'] %>
+      <% else %>
+        <%= agile_render( @options['renderer'] || @page.link ) %>
+      <% end %>
+
+    <% else %>
+      <%= msg.html_safe %>
+    <% end %>
+  </div>
+</div>
+
+<%= agile_page_bottom %>

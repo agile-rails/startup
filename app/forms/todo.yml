@@ -1,0 +1,92 @@
+# Form for todo
+table: todo
+
+index:
+  filter: subject, priority as select, time
+  actions: standard
+
+  data_set:
+    actions:
+      1: edit
+      10:
+        type: ajax
+        title: todo.close
+        icon: check_circle-o
+        action: run
+        active: TodoControl.close_button_active
+        control: todo.close_task
+        confirm: todo.confirm
+
+    tr_style:
+      eval: 'record.closed ? "color: darkgreen" : ((record.time < Time.now.localtime && !record.closed) ? "color: #f22" : "")'
+  # Choose from
+  # _id,created_at,updated_at,subject,body,time_begin,priority,closed,ar_user_id,created_by
+    columns:
+      10:
+        name: time
+        format: d
+        width: 6%
+      20:
+        name: priority
+        eval: agile_text_for_value
+        width: 6%
+        td_style:
+          eval: '"color: #{%w[\  darkgreen darkblue red][document.closed ? 0 : document.priority]};"'
+        filter: no
+
+      30:
+        name: subject
+        width: 25%
+      40:
+        name: created_at
+        format: d
+        width: 6%
+      50:
+        name: created_by
+        eval: agile_name_for_id,ar_user,name
+      60:
+        name: closed
+        eval: todo_closed_state
+        width: 12%
+        sort: n
+
+form:
+  actions:
+    standard: 1
+    2: save
+    10:
+      type: ajax
+      text: todo.close
+      icon: check_circle-o
+      action: run
+      active: TodoControl.close_button_active
+      control: todo.close_task
+
+  fields:
+    10:
+      name: ar_user_id
+      type: select
+      choices: eval ArUser.users_for_select
+      default:
+        eval: session[:user_id]
+      group: 2
+    20:
+      name: closed
+      type: check_box
+      readonly: true
+    30:
+      name: subject
+      type: text_field
+      size: 80
+    40:
+      name: body
+      type: text_area
+      size: 80x10
+    50:
+      name: time
+      type: datetime_picker
+      size: 14
+    60:
+      name: priority
+      type: radio_button
+      in_line: true

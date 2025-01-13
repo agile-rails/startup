@@ -1,0 +1,18 @@
+
+sl:
+  portal:
+    new_entry: Nov vpis
+    report: Poročilo
+    starting-date: Začetni datum
+    ending-date: Končni datum
+
+  menu:
+    home: Domov
+    diary: Dnevnik
+    todo: Opomniki
+    orders: Naročila
+
+  todo:
+    close: Zaključeno
+    confirm: Potrdite zaključek naloge
+    filter_hide_closed: Skrij zaključene naloge

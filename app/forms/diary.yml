@@ -1,0 +1,87 @@
+## diary form
+
+table: diary
+#controls: diary
+#title: Diary
+#readonly: true
+#permissions:
+#  can_view: Company Users,admin
+
+index: 
+  filter: search as text_field, title, duration
+  actions:
+    1:
+      type: new
+      caption: portal.new_entry
+    2: filter
+    #standard: yes
+
+    10:
+      type: ajax
+      caption: Process checked
+      icon: check
+      title: Process checked documents
+
+      action: run
+      control: diary.process_checked
+
+    10:
+
+  data_set:
+    #filter: default_filter
+    actions:
+      standard: true
+      #0: check
+
+    columns:
+      10:
+        name: title
+        width: 40%
+      20:
+        name: time_begin
+      30:
+        name: duration
+        eval: agile_text_for_value
+
+form:
+  actions: standard
+  #labels_position: top
+  #actions_position: both
+
+  tabs:
+    1main:
+      10:
+        name: ar_user_id
+        type: readonly
+        eval: agile_name_for_id,ar_user,name
+        default:
+          eval: session[:user_id]
+
+      20:
+        name: title
+        type: text_field
+        size: 50
+
+      30:
+        name: time_begin
+        type: datetime_picker
+        size: 15
+        options:
+          step: 15
+        default:
+          eval: Time.now
+
+      40:
+        name: duration
+        type: select
+        #choices:
+
+      50:
+        name: closed
+        type: check_box
+
+    2notes:
+      10:
+        name: body
+        type: html_field
+        options: "height: 500"

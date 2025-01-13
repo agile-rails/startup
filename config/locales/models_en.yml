@@ -1,0 +1,94 @@
+en:
+  helpers:
+    label:
+      diary:
+        table_title: Diary
+        choices_for_duration: "10 min:10,15 min:15,20 min:20,30 min:30,45 min:45,1 hour:60,1 hour 30 min:90,2 hours:120,2 hours 30 min:150,3 hours:180,4 hours:240,5 hours:300,6 hours:360,7 hours:420,8 hours:480"
+        1main: Main
+        2notes: Notes
+
+        title: Title
+        body: Notes
+        time_begin: Start time
+        duration: Duration
+        search: Notes
+        closed: Closed
+        ar_user_id: Author
+
+      todo:
+        table_title: Todo list and reminder
+        choices_for_priority: 'Low:1,Medium:2,High:3'
+
+        subject: Subject
+        body: Body
+        time: Due time
+        priority: Priority
+        closed: Closed
+        closed_state: Closed
+        time_closed: Closed time
+        ar_user_id: Person
+        created_at: Created at
+
+      ar_user:
+        2company: Company
+        sector_id: Sector
+        cost_center_id: Cost center
+        job: Job position
+        sign: Signature
+
+      _partner:
+        table_title: Business partners
+
+        name: Short name
+        name_long: Long name
+        address: Address
+        post: Post
+        country: Country
+        email: e-Mail address
+        phone: Phone number
+        mobile: Mobile number
+        account: Bank account
+        vat_number: VAT number
+        notes: Notes
+        address_post: Address & post
+
+    help:
+      diary:
+        title: Short title
+        body: Description of event or note or message to remember
+        time_begin: Time or date when note is created or event started
+        duration: Duration of event
+        search: Data used for searching data
+        created_by: This note was created by
+        closed: Document is closed. No further work necessary.
+        ar_user_id: Author of the record
+
+      todo:
+        subject: Brief description of reminder
+        body: Long descripton
+        time: Due time reminder. ex. Must be finished. Can be blank.
+        priority: Priority level
+        closed: Reminder is closed
+        time_closed: Time when closed
+        ar_user_id: Name of the reminded person
+        created_by: Person who created a reminder
+
+      ar_user:
+        sector_id: User is employed in sector
+        cost_center_id: Sectors cost center code
+        job: What is users job position (name) in the company
+        sign: Signature filename
+
+      _partner:
+        name: Short partner name
+        name_long: Long partner name
+        address: Partner's address
+        post: Post number and post name
+        country: Partners country of origin
+        email: Partner's e-Mail address
+        phone: Telephone number
+        mobile: Mobile number
+        account: Bank account
+        vat_number: VAT number
+        notes: Random notes about partner
+        address_post: Address & post

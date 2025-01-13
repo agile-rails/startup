@@ -1,0 +1,64 @@
+de:
+  helpers:
+    label:
+      diary:
+        table_title: Tagebuch
+        choices_for_duration: "10 min:10,15 min:15,20 min:20,30 min:30,45 min:45,1 Stunde:60,1 Stunde 30 min:90,2 Stunden:120,2 Stunden 30 min:150,3 Stunden:180,4 Stunden:240,5 Stunden:300,6 Stunden:360,7 Stunden:420,8 Stunden:480"
+        1main: Haupt
+        2notes: Notizen
+
+        title: Titel
+        body: Notizen
+        time_begin: Startzeit
+        duration: Dauer
+        search: Notizen
+        closed: Geschlossen
+        ar_user_id: Autor
+
+      todo:
+        table_title: Aufgabenliste und Erinnerung
+        choices_for_priority: 'Niedrig:1,Mittel:2,Hoch:3'
+
+        subject: Betreff
+        body: Inhalt
+        time: Fälligkeitszeit
+        priority: Priorität
+        closed: Geschlossen
+        closed_state: Geschlossen
+        time_closed: Abschlusszeit
+        ar_user_id: Person
+        created_at: Erstellt am
+
+      ar_user:
+        2company: Firma
+        sector_id: Bereich
+        cost_center_id: Kostenstelle
+        job: Berufsbezeichnung
+        sign: Unterschrift
+
+    help:
+      diary:
+        title: Kurzer Titel
+        body: Beschreibung des Ereignisses oder der Notiz oder Nachricht zum Erinnern
+        time_begin: Zeit oder Datum, wann die Notiz erstellt oder das Ereignis begonnen wurde
+        duration: Dauer des Ereignisses
+        search: Daten zur Suche nach Daten
+        created_by: Diese Notiz wurde erstellt von
+        closed: Dokument ist geschlossen. Keine weitere Arbeit erforderlich.
+        ar_user_id: Autor des Eintrags
+
+      todo:
+        subject: Kurze Beschreibung der Erinnerung
+        body: Lange Beschreibung
+        time: Erinnerung an die Fälligkeitszeit. z.B. Muss fertig sein. Kann leer bleiben.
+        priority: Prioritätsstufe
+        closed: Erinnerung ist geschlossen
+        time_closed: Zeitpunkt des Abschlusses
+        ar_user_id: Name der erinnernden Person
+        created_by: Person, die eine Erinnerung erstellt hat
+
+      ar_user:
+        sector_id: Benutzer ist im Bereich beschäftigt
+        cost_center_id: Kostenstellencode des Bereichs
+        job: Was ist die Berufsbezeichnung des Benutzers im Unternehmen
+        sign: Dateiname der Unterschrift

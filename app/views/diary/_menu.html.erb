@@ -1,0 +1,14 @@
+
+<ul class="app-menu">
+  <li class="ar-link active">
+    <%= agile_link_to t('menu.diary'), 'book',
+                      { t: :diary }, target: :iframe_edit %>
+  </li>
+
+  <li class="ar-link">
+    <%= agile_link_to t('portal.report'), 'print',
+                      { t: :ar_memory, f: :diary_report, action: :new }, target: :iframe_edit %>
+  </li>
+</ul>
+
+<%= agile_edit_frame(:diary) %>

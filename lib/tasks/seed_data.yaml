@@ -1,0 +1,380 @@
+ar_sites:
+  - id: 2
+    name: my.portal.com
+    homepage_link: portal-home
+    page_class: ArPage
+    menu_class: ArMenu
+    files_directory: files
+    active: true
+    created_by: 2
+    updated_by: 2
+    menu_name: portal-menu
+    menu_id: 3
+    settings: "ckeditor:\r\n config_file: /files/ck_config.js\r\n css_file: /files/ck_css.css\r\ncompany:\r\n name: My company\r\n city: MyCity\r\n address: Some street 23a\r\n post: 1234 Post\r\n vat: XX12345678\r\n bank: XXNN 1234 5678 9123 4567\r\n stamp: files/signs/stamp.png"
+    header: ''
+  - id: 8
+    name: development
+    description: Alias to active site in development
+    page_class: ArPage
+    menu_class: ArMenu
+    active: true
+    created_by: 2
+    updated_by: 2
+    menu_id: 1
+    alias_for: my.portal.com
+    header: ''
+ar_roles:
+- id: 1
+  name: Guest
+  system_name: guest
+  active: true
+- id: 2
+  name: Administrator
+  system_name: admin
+  active: true
+- id: 3
+  name: User account
+  system_name: user
+  active: true
+- id: 4
+  name: Company manager
+  system_name: company_manager
+  active: true
+- id: 5
+  name: My company users
+  system_name: users
+  active: true
+
+ar_permissions:
+- id: 1
+  table_name: ar_poll
+  active: true
+- id: 2
+  table_name: default
+  is_default: true
+  active: true
+- id: 3
+  table_name: ar_memory
+  active: true
+ar_users:
+- id: 2
+  username: aaaaaa
+  first_name: Admin
+  last_name: User
+  name: Admin User
+  email: admin@home.com
+  birthdate: 2000-01-01
+  active: true
+  updated_by: 2
+  password_digest: "no login"
+  sector_id: 1
+  cost_center_id: 1
+- id: 6
+  username: user
+  first_name: User
+  last_name: Some
+  name: User Some
+  email: user@home.com
+  birthdate: 2000-01-01
+  active: true
+  created_by: 2
+  updated_by: 2
+  password_digest: "no login"
+  sector_id: 1
+  cost_center_id: 1
+  sign: 'files/signs/big-boss.png'
+ar_designs:
+  - id: 1
+    description: Default portal design
+    rails_view: designs/portal
+    active: true
+    updated_by: 2
+    created_by: 2
+    site_id: 2
+  - id: 2
+    description: Default web design
+    rails_view: designs/web
+    active: true
+    updated_by: 2
+    created_by: 2
+    site_id: 2
+ar_pages:
+- id: 1
+  subject: Portal home
+  link: portal-home
+  body: ''
+  params: 'menu: home/app_home'
+  menu_id: 1;1
+  comments: 1
+  publish_date: 2024-01-01 06:03:30.246000000 Z
+  active: true
+  updated_by: 2
+  ar_site_id: 2
+  ar_design_id: 1
+- id: 2
+  subject: Diary
+  link: diary
+  body: ''
+  params: 'menu: diary/menu'
+  menu_id: 1;2
+  comments: 1
+  publish_date: 2024-01-01 06:03:30.246000000 Z
+  active: true
+  created_by: 2
+  updated_by: 2
+  ar_site_id: 2
+  ar_design_id: 1
+- id: 3
+  subject: TO DO
+  link: todo
+  body: ''
+  params: 'menu: todo/menu'
+  menu_id: 1;3
+  comments: 1
+  publish_date: 2024-01-01 06:03:30.246000000 Z
+  active: true
+  created_by: 2
+  updated_by: 2
+  ar_site_id: 2
+  ar_design_id: 1
+- id: 4
+  subject: Orders
+  link: orders
+  body: ''
+  params: 'menu: orders/menu'
+  menu_id: 1;2
+  comments: 1
+  publish_date: 2024-01-01 06:03:30.246000000 Z
+  active: true
+  created_by: 2
+  updated_by: 2
+  ar_site_id: 2
+  ar_design_id: 1
+- id: 5
+  subject: Login
+  link: login
+  body: ''
+  comments: 1
+  publish_date: 2024-01-01 06:03:30.246000000 Z
+  params: "render: \"agile_render(:ar_poll, poll_id: 'login', div: 'login')\""
+  active: true
+  updated_by: 2
+  ar_site_id: 2
+  ar_design_id: 1
+  ar_poll_id: 2
+  policy_id: 3
+
+ar_user_roles:
+- id: 1
+  ar_role_id: 2
+  ar_user_id: 2
+  valid_from: 2024-01-01
+  active: true
+- id: 2
+  ar_role_id: 4
+  ar_user_id: 6
+  valid_from: 2024-01-01
+  active: true
+- id: 3
+  ar_role_id: 5
+  ar_user_id: 6
+  valid_from: 2024-01-01
+  active: true
+- id: 4
+  ar_role_id: 5
+  ar_user_id: 2
+  valid_from: 2024-01-01
+  active: true
+
+ar_policies:
+- id: 2
+  name: Default policy
+  description: Default policy
+  is_default: true
+  active: true
+  updated_by: 2
+  message: No access!
+  ar_site_id: 2
+- id: 3
+  name: Open for all
+  description: Open for all
+  active: true
+  updated_by: 2
+  message: This message should necer be seen!
+  ar_site_id: 2
+- id: 4
+  name: No access
+  description: No access
+  active: true
+  updated_by: 2
+  message: This page is visible only by admins. <%= login_dialog %>
+  ar_site_id: 2
+
+ar_polls:
+- id: 2
+  name: login
+  title: Portal login
+  operation: link
+  parameters: "/portal/process_login?return_to=/"
+  display: td
+  form: "-\r\n   name: username\r\n   text: 'Username:'\r\n   type: text_field\r\n
+    \  html:\r\n     size: 15\r\n-\r\n   name: password\r\n   text: 'Password:'\r\n   type:
+    password_field\r\n   html:\r\n     size: 15\r\n-\r\n   name: send\r\n   text:
+    LOGIN\r\n   type: submit_tag\r\n"
+  active: true
+  created_by: 2
+  updated_by: 2
+ar_policy_rules:
+- id: 1
+  ar_policy_id: 2
+  ar_role_id: 2
+  permission: 2
+  updated_by: 2
+  active: true
+- id: 4
+  ar_policy_id: 3
+  ar_role_id: 1
+  permission: 1
+  updated_by: 2
+  active: true
+- id: 5
+  ar_policy_id: 2
+  ar_role_id: 1
+  permission: 0
+  updated_by: 2
+  active: true
+- id: 6
+  ar_policy_id: 2
+  ar_role_id: 3
+  permission: 1
+  updated_by: 2
+  active: true
+- id: 8
+  ar_policy_id: 4
+  ar_role_id: 3
+  permission: 0
+  updated_by: 5
+  active: true
+- id: 9
+  ar_policy_id: 1
+  ar_role_id: 2
+  permission: 4
+  updated_by: 2
+  active: true
+- id: 10
+  ar_policy_id: 1
+  ar_role_id: 1
+  permission: 0
+  updated_by: 2
+  active: true
+- id: 11
+  ar_policy_id: 1
+  ar_role_id: 3
+  permission: 4
+  updated_by: 2
+  active: true
+ar_menus:
+- id: 3
+  name: portal-menu
+  description: My portal menu
+  active: true
+  created_by: 2
+  updated_by: 2
+  ar_site_id: 2
+
+ar_menu_items:
+- id: 1
+  caption: Home
+  link: portal-home
+  order: 10
+  active: true
+  parent_id: 0
+  ar_menu_id: 3
+- id: 2
+  caption: Diary
+  link: diary
+  order: 20
+  active: true
+  parent_id: 0
+  ar_menu_id: 3
+- id: 3
+  caption: TO DO
+  link: todo
+  order: 30
+  active: true
+  parent_id: 0
+  ar_menu_id: 3
+- id: 4
+  caption: Orders
+  link: orders
+  active: true
+  order: 40
+  parent_id: 0
+  ar_menu_id: 3
+
+ar_permission_rules:
+- id: 1
+  ar_permission_id: 1
+  ar_role_id: 2
+  permission: 64
+  active: true
+  created_by: 2
+  updated_by: 2
+- id: 2
+  ar_permission_id: 1
+  ar_role_id: 3
+  permission: 32
+  active: true
+  created_by: 2
+  updated_by: 2
+- id: 3
+  ar_permission_id: 2
+  ar_role_id: 2
+  permission: 64
+  active: true
+  created_by: 2
+  updated_by: 2
+- id: 4
+  ar_permission_id: 3
+  ar_role_id: 1
+  permission: 32
+  active: true
+  created_by: 2
+  updated_by: 2
+
+sectors:
+- id: 1
+  name: My Sector
+  short_name: MS
+  head_id: 6
+  created_by: 2
+  updated_by: 2
+  active: true
+
+cost_centers:
+- id: 1
+  code: '1000'
+  name: Cost center 1000
+  sector_id: 1
+  center_type: 1
+  ar_user_id: 6
+  created_by: 2
+  updated_by: 2
+  active: true
+
+ar_folder_permissions:
+- id: 1
+  folder_name: "/files"
+  inherited: true
+  active: true
+  created_by: 2
+  updated_by: 2
+
+ar_folder_rules:
+- id: 1
+  ar_folder_permission_id: 1
+  ar_role_id: 2
+  permission: 128
+  active: true
+  created_by: 2
+  updated_by: 2
