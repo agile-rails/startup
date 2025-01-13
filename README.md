@@ -26,9 +26,9 @@ sudo gem update psych
 # change to your applications root directory
 cd /.../your_apps_home_directory
 # clone AgileRails startup application from github
-git clone https://gihub.com/agile-rails/agile-rails-startup.git
+git clone https://github.com/agile-rails/startup.git your_app_directory
 # change to application root
-cd  agile-rails-startup
+cd  your_app_directory
 # install required gems
 bundle install
 ```
