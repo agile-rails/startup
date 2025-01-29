@@ -7,7 +7,7 @@ them on any operating system where Ruby interpreter is available.
 
 ### Requirements:
 
-Ruby version: >= 3.2
+Ruby version: >= 3.2, Rails >= 7.2
   
 ### System dependencies:
 ```bash
@@ -33,11 +33,12 @@ cd  your_app_directory
 bundle install
 ```
 
-### Database initialization
+### Database creation and initialization
 
-Before the application is started database must be loaded with some data and default admin user must be created.
+Before the application is started, database must be created and loaded with some data and default admin user must be created.
 ```bash
-bundle exec rails agile:seed_load
+rails agile:db:migrate
+rails agile:seed_load
 ```
 
 ### Run server
@@ -49,7 +50,7 @@ rails server -b 0.0.0.0
 
 Start browser and go to url http://localhost:3000
 
-Login with credentials provided in database initialization step.
+Login with credentials provided in database creation step.
 
 Congratulations. If everything went OK you are running startup application.
 
@@ -73,3 +74,10 @@ rails agile:db:clone
 Depending on number of records the task may take a while to complete. The cloning is not optimized for large number of records.
 
 When the task is completed, update config/database.yml and point development (or any environment) settings to your new database and restart server.
+
+########################################################################
+# Return filter options
+########################################################################
+def self.agile_filters
+{ title: I18n.t('Company users'), operation: 'eval', value: 'ArUser.includes(:ar_user_roles).where(ar_user_roles: { ar_role_id: 2 }, active: true)' }
+end

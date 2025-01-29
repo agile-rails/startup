@@ -36,7 +36,7 @@ en:
         job: Job position
         sign: Signature
 
-      _partner:
+      partner:
         table_title: Business partners
 
         name: Short name
@@ -79,7 +79,7 @@ en:
         job: What is users job position (name) in the company
         sign: Signature filename
 
-      _partner:
+      partner:
         name: Short partner name
         name_long: Long partner name
         address: Partner's address

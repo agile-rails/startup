@@ -115,7 +115,8 @@
 .agile-all .form-key.with-help::before {
   content: '+';
   font-size: 0.8em;
-  padding-right: 2px;
+  padding-right: 4px;
+  font-weight: 700;
 }
 .agile-all .form-key.no-help::before {
   content: '';
