@@ -23,8 +23,6 @@ gem 'bcrypt' #, '~> 3.0.0'
 #gem 'exception_notification'
 
 gem 'rb-readline'                 # needed for rails c(onsole)
-#gem 'foundation-rails' #, '~> 6.3.0'
-
 gem 'bootsnap', require: false
 gem 'spreadsheet'
 gem 'prawn'

@@ -45,7 +45,7 @@ rails agile:seed_load
 
 Run application in development mode.
 ```bash
-rails server -b 0.0.0.0
+rails server
 ```
 
 Start browser and go to url http://localhost:3000
@@ -74,10 +74,3 @@ rails agile:db:clone
 Depending on number of records the task may take a while to complete. The cloning is not optimized for large number of records.
 
 When the task is completed, update config/database.yml and point development (or any environment) settings to your new database and restart server.
-
-########################################################################
-# Return filter options
-########################################################################
-def self.agile_filters
-{ title: I18n.t('Company users'), operation: 'eval', value: 'ArUser.includes(:ar_user_roles).where(ar_user_roles: { ar_role_id: 2 }, active: true)' }
-end
