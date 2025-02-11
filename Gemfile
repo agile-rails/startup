@@ -32,7 +32,7 @@ gem 'kaminari'
 gem 'net-http'
 gem 'drg_material_icons'
 
-#if ENV['RAILS_ENV'] == 'development' || ENV["RAILS_ENV"] == "test" || 
+#if ENV['RAILS_ENV'] == 'development' || ENV["RAILS_ENV"] == "test" ||
 #   ENV["RAILS_ENV"] == "stage" || ENV["RAILS_ENV"] == "source" || ENV["RAILS_ENV"] == "destination"
 
 if ENV['RAILS_ENV'] == 'development' || ENV["RAILS_ENV"] == "test"
@@ -46,8 +46,6 @@ if ENV['RAILS_ENV'] == 'development' || ENV["RAILS_ENV"] == "test"
   gem 'agile_rails', :path => '../agile_rails'
   gem 'agile_rails_html_editor', path: '../agile_rails_html_editor'
 
-  #gem 'agile_rails', :path => '../aa/agile_rails-0.0.0.1'
-  #gem 'agile_rails_html_editor', path: '../aa/agile_rails_html_editor-0.0.1'
 else #PRODUCTION
   gem 'agile_rails', :path => '../agile_rails'
   gem 'agile_rails_html_editor', :path => '../agile_rails_html_editor'
@@ -57,10 +55,11 @@ else #PRODUCTION
   #end
 end
 
+gem "agile_rails_orders", git: 'https://github.com/agile-rails/agile-rails-orders'
+
 if ENV["RAILS_ENV"] == "development" || ENV["RAILS_ENV"] == "test"
   gem 'web-console'
-  gem 'agile_rails_orders',        :path => '../agile_rails_orders'
-  #gem 'agile_rails_orders',        :path => '../aa/agile_rails_orders-0.0.1'
+  #  gem 'agile_rails_orders',        :path => '../agile_rails_orders'
   #  gem 'my_own_gem', path: '../to_my_own_gem'
 end
 
