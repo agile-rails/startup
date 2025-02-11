@@ -39,4 +39,4 @@
 
 /.idea
 /vendor/ruby
-
+/Gemfile.lock
