@@ -424,7 +424,7 @@ hr {
   border-left: 16px solid rgba(91, 135, 231, 0.2);
 }
 
-.dropdown-menu a:link, .dropdown-menu a:visited {
+.dropdown-menu a:link, .dropdown-menu a:visited, .dropdown-menu .ar-link-ajax {
   display: block;
   padding: 10px 6px;
   text-decoration: none;
@@ -432,22 +432,27 @@ hr {
   font-size: 15px;
 }
 
-.dropdown-menu .menu-item.active a {
+.dropdown-menu .menu-item.active a, .dropdown-menu .ar-link-ajax {
   background-color: rgba(91, 135, 231, 0.2);
   color: #253858;
 }
 
-.dropdown-menu a:hover {
+.dropdown-menu a:hover, .dropdown-menu .ar-link-ajax:hover {
   background-color: rgba(91, 135, 231, 0.2);
   color: #253858;
 }
 
-.dropdown-menu a:hover > i {
+.dropdown-menu a:hover > i, .dropdown-menu .ar-link-ajax:hover > i {
   color: #253858;
 }
 
 .dropdown-menu .active a > i {
   color: #253858;
+}
+
+.dropdown-menu .ar-link-ajax {
+  background-color: transparent;
+  text-align: left;
 }
 
 
