@@ -32,6 +32,7 @@
 
 /public/assets
 /public/tmp
+/public/images
 /public/files/.trash
 
 # Ignore master key for decrypting credentials and more.
