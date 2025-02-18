@@ -41,9 +41,9 @@ if ENV['RAILS_ENV'] == 'development' || ENV["RAILS_ENV"] == "test"
   gem 'rubocop', require: false
   gem 'web-console'
 
-  gem 'agile_rails'
-  gem 'agile_rails_html_editor', git: 'https://github.com/agile-rails/agile-rails-html-editor'
-  gem 'agile_rails_orders', git: 'https://github.com/agile-rails/agile-rails-orders'
+  gem 'agile_rails', :path => '../agile_rails'
+  gem 'agile_rails_html_editor', path: '../agile_rails_html_editor'
+  gem 'agile_rails_orders', path: '../agile_rails_orders'
 
   # gem 'my_own_gem', path: '../to_my_own_gem'
 
@@ -56,6 +56,10 @@ else #PRODUCTION
   #  gem 'my_own_gem'
   #end
 end
+
+#gem 'agile_rails_html_editor', git: 'https://github.com/agile-rails/agile-rails-html-editor'
+#gem 'agile_rails_orders', git: 'https://github.com/agile-rails/agile-rails-orders'
+
 
 if ENV["RAILS_ENV"] == "test"
   gem 'minitest'
