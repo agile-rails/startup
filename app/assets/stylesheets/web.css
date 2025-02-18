@@ -134,6 +134,7 @@
   background-color: #fff;
   color: darkgreen;
   border: 1px dotted #888;
+  overflow-wrap: anywhere;
 }
 .agile-all .form-key-help.open {
   display: block;
