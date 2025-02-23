@@ -97,6 +97,14 @@
   background-color: rgba(219, 230, 244, 0.4);
 }
 
+#hero #two img {
+  opacity: 0.3;
+}
+#hero #two img:hover {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
 /**** FORM helper ***/
 .agile-all {
   font-family: monospace;
