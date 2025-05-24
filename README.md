@@ -12,7 +12,7 @@ Ruby version: >= 3.2, Rails >= 7.2
 ### System dependencies:
 ```bash
 # minimal application requirements 
-sudo apt install ruby git sqlite nodejs
+sudo apt install ruby git sqlite3 nodejs
 # some ruby gems may require a compilation
 sudo apt install build-essential ruby-dev libyaml-dev
 # install Ruby on Rails
