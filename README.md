@@ -12,7 +12,7 @@ Ruby version: >= 3.2, Rails >= 7.2
 ### System dependencies:
 ```bash
 # minimal application requirements 
-sudo apt install ruby git sqlite3 nodejs
+sudo apt install ruby git nodejs
 # some ruby gems may require a compilation
 sudo apt install build-essential ruby-dev libyaml-dev
 # install Ruby on Rails
@@ -53,6 +53,18 @@ Start browser and go to url http://localhost:3000
 Login with credentials provided in database creation step.
 
 Congratulations. If everything went OK you are running startup application.
+
+### Where to go from here
+To enhance application with your own tables you must:
+1. Create migration file
+2. Create model file
+3. Generate form 
+```bash
+rails generate agile:new_form model_name 
+```
+4. Update form to your needs
+5. Create labels and help text in locales
+6. Add form to menu or create new menu and landing page 
 
 ### Clone database to non-SQLite database server
 If you are not satisfied with sqlite as development database or you are moving 
